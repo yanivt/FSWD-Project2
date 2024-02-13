@@ -6,53 +6,31 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-    <style>
-        .rectangle {
-            width: 200px; /* Width of the rectangle */
-            height: 100px; /* Height of the rectangle */
-            background-color: blue; 
-            border: 5px solid black;
-            border-color: rgb(245, 245, 220);
-        }
-        #cube1{
-            background-color: yellow; 
-        }
-        #cube2{
-            background-color: blue; 
-        }
-        #cube3{
-            background-color: red; 
-        }
-        #cube4{
-            background-color: purple; 
-        }
-        #cube5{
-            background-color: rgb(98, 255, 0); 
-        }
-        #cube6{
-            background-color: rgb(255, 179, 0); 
-        }
+    <link rel='stylesheet' type='text/css' media='screen' href='memoryGame.css'>
 
-
-    </style>
 </head>
 <body>
     <h1>Hey and welcome the the "x" game</h1>
     <h2>The best game to test your ability for shory memory</h2>
 
     </h2>
-    <div class="line1">
+    <div class="grid-container">
+        <div id="intraction">
+            <h1>ready to start? please choose the difficulty of the game</h1>
+            <button>Easy - 4 buttons</button>
+            <button onclick="start(6)">Normal - 6 buttons</button>
+            <button>Hard - 8 buttons</button>
+
+        </div>
         <div class="rectangle" id="cube1"></div>
         <div class="rectangle" id="cube2"></div>
         <div class="rectangle" id="cube3"></div>
-    </div>
-    <div class="line2">
         <div class="rectangle" id="cube4"></div>
         <div class="rectangle" id="cube5"></div>
         <div class="rectangle" id="cube6"></div>
     </div>
+
+    <script src="memoryGame.js"></script>
 
 </body>
 </html>

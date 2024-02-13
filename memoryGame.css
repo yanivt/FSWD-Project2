@@ -1,0 +1,46 @@
+.rectangle {
+    width: 450px;
+    height: 250px;
+    background-color: blue; 
+    border-color: rgb(245, 245, 220);
+    margin: 15px;
+    opacity: 0.5;
+}
+
+#cube1{
+    background-color: yellow; 
+}
+#cube2{
+    background-color: blue; 
+}
+#cube3{
+    background-color: red; 
+}
+#cube4{
+    background-color: purple; 
+}
+#cube5{
+    background-color: rgb(98, 255, 0); 
+}
+#cube6{
+    background-color: rgb(255, 179, 0); 
+}
+.grid-container{
+    width: fit-content;
+    height: fit-content;
+;
+    display: grid;
+    grid-template-areas: 'firstHeader firstHeader firstHeader';
+    padding: 10px;
+
+    gap: 20px 10px;
+    background-color: rgb(0, 0, 0);
+}
+.grid-container > div {
+    padding: 10px 0;
+}
+#intraction{
+    grid-area: firstHeader;
+    background-color: rgb(0, 195, 255);
+    text-align: center;
+}
