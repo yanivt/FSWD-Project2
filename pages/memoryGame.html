@@ -6,30 +6,44 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/memoryGame.css'>
 
 </head>
+
 <body>
-    <h1>Hey and welcome the the Memory game</h1>
-    <h2>The best game to test your ability for shory memory</h2>
-
-    </h2>
-    <audio id="audioPlayer" ></audio>
-    <div class="grid-container" id="mainContainer">
-        <div id="intraction">
-            <h1>ready to start? please choose the difficulty of the game</h1>
-            <button onclick="startGame(4)"> Easy - 4 </button>
-            <button onclick="startGame(6)"> Normal - 6 </button>
-            <button onclick="startGame(9)"> Hard - 9 </button>
+    <div class="navbar">
+        <div >
+            <a class="mainNav" href="../index.html">Home</a>
+            <a class="mainNav" href="Showcase.html">Our Games</a>
         </div>
-        <div class="rectangle" id="cube1"></div>
-        <div class="rectangle" id="cube2"></div>
-        <div class="rectangle" id="cube3"></div>
-        <div class="rectangle" id="cube4"></div>
-        <div class="rectangle" id="cube5"></div>
-        <div class="rectangle" id="cube6"></div>
+        <div class="auth-links">
+            <a href="logIn.html">Log In</a>
+            <a href="SignUp.html">Sign Up</a>
+        </div>
     </div>
-
+    <div id="explain">
+        <h1>Hey and welcome the the Memory game</h1>
+        <h2>The best game to test your ability for shory memory</h2>
+   
+        </h2>
+        <audio id="audioPlayer" ></audio>
+        <div class="grid-container" id="mainContainer">
+            <div id="intraction">
+                <h1>ready to start? please choose the difficulty of the game</h1>
+                <button onclick="startGame(4)"> Easy - 4 </button>
+                <button onclick="startGame(6)"> Normal - 6 </button>
+                <button onclick="startGame(9)"> Hard - 9 </button>
+            </div>
+            <div class="rectangle" id="cube1"></div>
+            <div class="rectangle" id="cube2"></div>
+            <div class="rectangle" id="cube3"></div>
+            <div class="rectangle" id="cube4"></div>
+            <div class="rectangle" id="cube5"></div>
+            <div class="rectangle" id="cube6"></div>
+        </div>
+    </div>
+    
     <script src="../js/memoryGame.js"></script>
 
 </body>
