@@ -4,67 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/Showcase.css'>
 
     <title>Games Showcase</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .game {
-            position: relative;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .game img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            display: block;
-        }
-        .game-content {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .game-title {
-            margin: 0;
-            font-size: 1.2em;
-        }
-        .status {
-            margin: 0;
-            font-weight: bold;
-        }
-        .play-button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 8px 20px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
 
@@ -83,11 +25,11 @@
         <h1>Games Showcase</h1>
 
         <div class="game">
-            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/golf-with-your-friends.jpg" alt="Working Game">
+            <img src="../media/Img/memoryGame.png" alt="Working Game">
             <div class="game-content">
-                <h2 class="game-title">Working Game</h2>
+                <h2 class="game-title">Memory Game</h2>
                 <p class="status">Status: Working</p>
-                <button class="play-button">Play</button>
+                <button class="play-button" onclick='window.location.href ="../pages/memoryGame.html"''>Play</button>
             </div>
         </div>
 
@@ -101,18 +43,18 @@
         </div>
 
         <div class="game">
-            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/golf-with-your-friends.jpg" alt="In Development Game">
+            <img src="/media/Img/war.png" alt="In Development Game">
             <div class="game-content">
-                <h2 class="game-title">Game in Development</h2>
+                <h2 class="game-title">Dragon war</h2>
                 <p class="status">Status: In Development</p>
                 <button class="play-button" disabled>In Development</button>
             </div>
         </div>
 
         <div class="game">
-            <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/07/golf-with-your-friends.jpg" alt="In Development Game">
+            <img src="../media/Img/pac-man.png" alt="In Development Game">
             <div class="game-content">
-                <h2 class="game-title">Another Game in Development</h2>
+                <h2 class="game-title">pac man</h2>
                 <p class="status">Status: In Development</p>
                 <button class="play-button" disabled>In Development</button>
             </div>

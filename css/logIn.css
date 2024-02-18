@@ -10,16 +10,22 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: bisque;
+
 }
 .container h2 {
     text-align: center;
 }
 .form-group {
     margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 5px;
+
 }
 .form-group label {
     display: block;
     margin-bottom: 5px;
+
 }
 .form-group input {
     width: 100%;
