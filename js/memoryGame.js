@@ -1,4 +1,9 @@
 
+
+
+
+
+
 let order = [];
 let nextPressed = 0;
 let user;
@@ -6,13 +11,25 @@ let userTurn = false;
 let numberOfCubes = 6;
 let intraction = document.getElementById("intraction");
 let audioPlayer = document.getElementById("audioPlayer");
+let StrIntraction = '<div id="intraction"></div>';
+let Cube1To4 = '<div class="rectangle" id="cube1"></div>\
+                <div class="rectangle" id="cube2"></div>\
+                <div class="rectangle" id="cube3"></div>\
+                <div class="rectangle" id="cube4"></div>';
+let Cube5To6 = '<div class="rectangle" id="cube5"></div>\
+                <div class="rectangle" id="cube6"></div>';
+let cube7to9 = '<div class="rectangle" id="cube7"></div>\
+                <div class="rectangle" id="cube8"></div>\
+                <div class="rectangle" id="cube9"></div>';
+
+
 
 function updateIntraction(){
   intraction = document.getElementById("intraction");
 }
 
 function animateRec(item){
-    document.getElementById(item).style.opacity =1;
+    setTimeout(() => document.getElementById(item).style.opacity =1, 20)
     setTimeout(() => document.getElementById(item).style.opacity =0.77, 1000);
     
     audioPlayer.src = "../media/sounds/gamePress.wav";
@@ -40,41 +57,19 @@ function initialize(cubes){
 
   switch (numberOfCubes) {
     case 4:
-      mainContainer.innerHTML = '\
-      <div id="intraction"></div>\
-      <div class="rectangle" id="cube1"></div>\
-      <div class="rectangle" id="cube2"></div>\
-      <div class="rectangle" id="cube3"></div>\
-      <div class="rectangle" id="cube4"></div>';
+      mainContainer.innerHTML = StrIntraction + Cube1To4;
       mainContainer.className = "grid-container";
       ButtonsEventListener();
       updateIntraction();
       break;
     case 6:
-      mainContainer.innerHTML = '\
-      <div id="intraction"></div>\
-      <div class="rectangle" id="cube1"></div>\
-      <div class="rectangle" id="cube2"></div>\
-      <div class="rectangle" id="cube3"></div>\
-      <div class="rectangle" id="cube4"></div>\
-      <div class="rectangle" id="cube5"></div>\
-      <div class="rectangle" id="cube6"></div>';
+      mainContainer.innerHTML = StrIntraction + Cube1To4 + Cube5To6;
       mainContainer.className = "grid-container"
       ButtonsEventListener();
       updateIntraction();
       break;
     case 9: 
-      mainContainer.innerHTML = '\
-      <div id="intraction"></div>\
-      <div class="rectangle" id="cube1"></div>\
-      <div class="rectangle" id="cube2"></div>\
-      <div class="rectangle" id="cube3"></div>\
-      <div class="rectangle" id="cube4"></div>\
-      <div class="rectangle" id="cube5"></div>\
-      <div class="rectangle" id="cube6"></div>\
-      <div class="rectangle" id="cube7"></div>\
-      <div class="rectangle" id="cube8"></div>\
-      <div class="rectangle" id="cube9"></div>';
+      mainContainer.innerHTML = StrIntraction + Cube1To4 + Cube5To6 + cube7to9;
       mainContainer.className = "grid-container9"
       ButtonsEventListener();
       updateIntraction();
@@ -154,11 +149,38 @@ function checkAnswer(pressed){
 
 function fail(){
   intraction.style.backgroundColor = "red";
-  intraction.innerHTML = "<h1> Game over! your score is " + (order.length* 100) + "</h1>";
+  let score = order.length* 100;
+  intraction.innerHTML = "<h1> Game over! your score is " + score + "</h1>";
   intraction.innerHTML += "<button onclick='restart()'>Try again</button>"
   userTurn = false;
+
   audioPlayer.src = "../media/sounds/gameOver.mp3";
   audioPlayer.play();
+  console.log("start");
+
+
+  user = getCookieObject("user");
+  console.log(user);
+
+  if(user != null){
+    for (let i = 0; i < backData.length; i++) {
+      if(backData[i].userName == user){
+        switch (numberOfCubes) {
+          case 4:
+            backData[i].memoryLevel1 = score;
+            break;
+          case 6:
+            backData[i].memoryLevel2 = score;
+          break;
+          case 9:
+            backData[i].memoryLevel3 = score;
+          break;
+        }
+      }
+    }
+    localStorage.setItem('users', JSON.stringify(backData));
+    console.log("end");
+  }
 }
 
 function restart(){
